@@ -8,3 +8,8 @@ img, video {
     height: auto;
     max-width: 100%;
 }
+
+body {
+    background-color: #9BA4B5;
+    padding: 0 clamp(0.75rem, -0.68rem + 6.1vw, 4.813rem);
+}
