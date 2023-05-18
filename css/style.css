@@ -39,7 +39,7 @@ body {
     font-weight: 700;
 }
 
-@media (max-width: 424px) {
+@media (max-width: 425px) {
     .name__title {
         font-size: 1.5rem;
     }
