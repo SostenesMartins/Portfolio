@@ -1,15 +1,163 @@
+@import url('https://fonts.googleapis.com/css2?family=Roboto:wght@500&display=swap');
+
+@import url('https://fonts.googleapis.com/css2?family=Montserrat:wght@500&family=Roboto:wght@500&display=swap');
+
 * {
     padding: 0;
     margin: 0;
     box-sizing: border-box;
 }
 
-img, video {
+img,
+video {
     height: auto;
     max-width: 100%;
 }
 
+a {
+    text-decoration: none;
+}
+
+li {
+    list-style: none;
+}
+
 body {
-    background-color: #9BA4B5;
     padding: 0 clamp(0.75rem, -0.68rem + 6.1vw, 4.813rem);
+}
+
+.conteiner__header {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 20px 0;
+}
+
+.name__title {
+    text-transform: uppercase;
+    font-family: 'Montserrat', sans-serif;
+    font-weight: 700;
+}
+
+@media (max-width: 424px) {
+    .name__title {
+        font-size: 1.5rem;
+    }
+}
+
+.conteiner__item {
+    display: flex;
+    gap: 40px;
+}
+
+@media (max-width: 768px) {
+    .menu {
+        z-index: 2;
+        position: absolute;
+        top: 0;
+        left: -100%;
+        height: 100vh;
+        width: 100%;
+        display: flex;
+        overflow: auto;
+        padding: 20px 0;
+        background-color: #e2e2e2;
+        transition: left 0.4s;
+    }
+
+    .menu._active {
+        left: 0;
+    }
+}
+
+.menu__icon {
+    display: none;
+}
+
+@media (max-width: 768px) {
+    .menu__icon {
+        display: block;
+        height: 18px;
+        width: 30px;
+        position: relative;
+        cursor: pointer;
+        z-index: 5;
+    }
+
+    .menu__icon span {
+        transition: all 0.4s ease 0s;
+        background-color: #000;
+        top: calc(50% - 1px);
+        width: 100%;
+        height: 2px;
+        position: absolute;
+        left: 0;
+    }
+
+    .menu__icon span:first-child {
+        top: 0;
+    }
+
+    .menu__icon span:last-child {
+        top: auto;
+        bottom: 0;
+    }
+
+    .menu__icon._active span {
+        transform: scale(0);
+    }
+
+    .menu__icon._active span:first-child {
+        transform: rotate(-45deg);
+        top: calc(50% - 1px);
+    }
+
+    .menu__icon._active span:last-child {
+        transform: rotate(45deg);
+        bottom: calc(50% - 1px);
+    }
+}
+
+@media (max-width: 768px) {
+    .conteiner__item {
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+        margin: auto;
+        gap: 100px;
+        justify-content: center;
+    }
+
+    .menu__link {
+        font-size: 2rem;
+    }
+}
+
+.menu__link {
+    text-transform: uppercase;
+    font-family: 'Roboto', sans-serif;
+    color: #000;
+    position: relative;
+    font-size: 1.25rem;
+    font-weight: 700;
+    padding: 15px 0;
+}
+
+.menu__item a::after {
+    content: '';
+    position: absolute;
+    left: 0;
+    bottom: 9px;
+    width: 100%;
+    height: 3px;
+    background-color: #000;
+    border-radius: 5px;
+    transform-origin: right;
+    transform: scaleX(0);
+    transition: transform .2s;
+}
+
+.menu__item a:hover::after {
+    transform-origin: left;
+    transform: scaleX(1);
 }
