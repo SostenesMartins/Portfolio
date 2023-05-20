@@ -23,6 +23,7 @@ li {
 }
 
 body {
+    background-color: #F6F1F1;
     padding: 0 clamp(0.75rem, -0.68rem + 6.1vw, 4.813rem);
 }
 
@@ -31,6 +32,7 @@ body {
     justify-content: space-between;
     align-items: center;
     padding: 20px 0;
+    color: #146C94;
 }
 
 .name__title {
@@ -61,7 +63,7 @@ body {
         display: flex;
         overflow: auto;
         padding: 20px 0;
-        background-color: #e2e2e2;
+        background-color: #FFF;
         transition: left 0.4s;
     }
 
@@ -86,7 +88,7 @@ body {
 
     .menu__icon span {
         transition: all 0.4s ease 0s;
-        background-color: #000;
+        background-color: #146C94;
         top: calc(50% - 1px);
         width: 100%;
         height: 2px;
@@ -136,7 +138,7 @@ body {
 .menu__link {
     text-transform: uppercase;
     font-family: 'Roboto', sans-serif;
-    color: #000;
+    color: #146C94;
     position: relative;
     font-size: 1.25rem;
     font-weight: 700;
@@ -150,7 +152,7 @@ body {
     bottom: 9px;
     width: 100%;
     height: 3px;
-    background-color: #000;
+    background-color: #146C94;
     border-radius: 5px;
     transform-origin: right;
     transform: scaleX(0);
@@ -160,4 +162,89 @@ body {
 .menu__item a:hover::after {
     transform-origin: left;
     transform: scaleX(1);
+}
+
+/*--------------------- main profile ----------------------------*/
+
+.conteiner__profile {
+    margin-top: 90px;
+    padding: 20px 0;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    gap: 50px;
+}
+
+.photo__profile {
+    border-radius: 50%;
+    max-width: 300px;
+    height: 300px;
+    object-fit: cover;
+    box-shadow: 0px 4px 1px 4px #146C94;
+}
+
+.desc__profile {
+    max-width: 500px;
+}
+
+.about__me {
+    font-size: 1.5rem;
+    font-family: 'Roboto', sans-serif;
+    color: #146C94;
+    padding: 5px 0;
+}
+
+.desc__about__me {
+    font-size: 1rem;
+    font-family: 'Roboto', sans-serif;
+    color: #146C94;
+    line-height: 20px;
+    padding: 5px 0;
+}
+
+.skills {
+    margin-top: 50px;
+    padding: 30px 0;
+    display: flex;
+    justify-content: center;
+    gap: 30px;
+}
+
+@media (max-width: 768px) {
+    .conteiner__profile {
+        flex-direction: column;
+        margin: 0;
+        gap: 20px;
+    }
+
+    .photo__profile {
+        max-width: 250px;
+        width: 100%;
+        height: 250px;
+    }
+
+    .skills {
+        margin: 0;
+        padding: 10px 0;
+    }
+}
+
+@media (max-width: 425px) {
+    .photo__profile {
+        max-width: 200px;
+        width: 100%;
+        height: 200px;
+    }
+
+    .about__me {
+        font-size: 1.13rem;
+    }
+
+    .desc__about__me {
+        font-size: .90rem;
+    }
+
+    .icon__skill {
+        max-width: 75px;
+    }
 }
